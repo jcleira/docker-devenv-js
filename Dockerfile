@@ -5,7 +5,7 @@ USER root
 
 # The following commands are copied from the dockerhub node alpine Dockerfile.
 
-ENV NODE_VERSION 9.3.0
+ENV NODE_VERSION 8.9.3
 
 RUN    apk add --no-cache libstdc++ \
     && apk add --no-cache --virtual .build-deps \
@@ -67,7 +67,7 @@ RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar \
   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz \
   && apk del .build-deps-yarn
 
-RUN npm install -g grunt-cli
+RUN npm install -g grunt-cli ember-cli
 
 USER dev
 WORKDIR /home/dev
